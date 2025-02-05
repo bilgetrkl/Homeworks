@@ -1,0 +1,30 @@
+;; Test Program
+;; Variable declarations
+(defvar x 5)
+(defvar y 10)
+(defvar z 0)
+
+;; Operations to set variable values
+(set x (+ x y))
+(set y (- y 2))
+(set z (* x y))
+(set x (/ z y))
+
+;; Function definition
+(deffun sum_two (a b)
+  (+ a b)
+)
+
+;; Function call
+(defvar result (sum_two x y))
+
+;; Conditional statement
+(if (> result 20)
+  (print "Result is greater than 20")
+  (print "Result is 20 or less")
+)
+
+;; Loop example
+(for (i 1 5)
+  (print i)
+)
