@@ -1,0 +1,24 @@
+createPlanetSystem Sirius 6000 101000 0 0.5
+addPlanet Alpha Sirius 250 100000 20 0.3
+addSatellite A1 Alpha 200 90000 30 0.2
+addSatellite A2 Alpha 210 95000 25 0.4
+addSatellite A3 Alpha 220 92000 22 0.6
+addPlanet Beta Alpha 270 98000 25 0.7
+addSatellite B1 Beta 190 89000 35 1.0
+addSatellite B2 Beta 185 87000 28 0.8
+addSatellite B3 Beta 195 86000 33 0.9
+addPlanet Gamma Beta 300 102000 15 1.2
+addSatellite G1 Gamma 210 93000 20 1.4
+addSatellite G2 Gamma 215 91000 18 1.1
+addSatellite G3 Gamma 205 94000 19 0.95
+addPlanet Epsilon Gamma 265 50002 10 0.2
+findRadiationAnomalies 0.7
+findRadiationAnomalies 1.0
+getPathTo Gamma
+getPathTo G2
+getPathTo A1
+printMissionReport
+printMissionReport B2
+printMissionReport Epsilon
+printMissionReport G1
+exit

@@ -1,0 +1,9 @@
+main
+main.core
+main.devices.displays
+main.devices.motors
+main.devices.sensors
+main.devices.sensors.imu
+main.devices.sensors.temp
+main.devices.wireless
+main.protocols

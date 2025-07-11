@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"main"},{"l":"main.core"},{"l":"main.devices.displays"},{"l":"main.devices.motors"},{"l":"main.devices.sensors"},{"l":"main.devices.sensors.imu"},{"l":"main.devices.sensors.temp"},{"l":"main.devices.wireless"},{"l":"main.protocols"}];updateSearchResults();
