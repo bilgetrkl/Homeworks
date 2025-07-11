@@ -1,0 +1,571 @@
+#DATA SECTION
+Begin Data Section
+
+# Registers
+0 0         # Program Counter
+1 100       # Stack Pointer
+2 0         # System call result
+3 0         # Number of instructions executed
+4 0         # Temp Program Counter
+5 0         # Reserved
+6 0         # Reserved
+7 0         # Reserved
+8 0         # Reserved
+9 0         # Reserved
+10 0        # Reserved
+11 0        # Reserved
+12 0        # Reserved
+13 0        # Reserved
+14 0        # Reserved
+15 0        # Reserved
+16 0        # Reserved
+17 0        # Reserved
+18 0        # Reserved
+19 0        # Reserved
+20 0        # Reserved
+
+# OS Variables
+21 5        # Number of user threads
+22 0        # Current thread ID
+23 0        # Scheduler counter
+24 0        # Unconditional jump flag
+25 0        # Thread check
+26 0        # Thread found
+
+# THREAD TABLE
+# OS Thread
+500 0       # ID
+501 0       # Start time
+502 0       # Count
+503 1       # State (0 for ready, 1 for running, 2 for blocked, 3 for terminated)
+504 0       # Program Counter
+505 100     # Stack Pointer
+
+# Thread 1
+510 1       # ID
+511 0       # Start Time
+512 0       # Count
+513 0       # State
+514 1000    # Program Counter 
+515 1100    # Stack Pointer
+516 0       # Reserved
+517         # Reserved
+518         # Reserved
+519         # Reserved
+
+# Thread 2
+520 2       # ID
+521 0       # Start Time
+522 0       # Count
+523 0       # State  
+524 2000    # Program Counter
+525 2100    # Stack Pointer
+526 0       # Reserved
+527         # Reserved
+528         # Reserved
+529         # Reserved
+
+# Thread 3
+530 3       # ID
+531 0       # Start Time
+532 0       # Count
+533 0       # State 
+534 3000    # Program Counter
+535 3100    # Stack Pointer
+536 0       # Reserved
+537 0       # Reserved
+538 0       # Reserved
+539 0       # Reserved
+
+# Thread 4
+540 4       # ID
+541 0       # Start Time
+542 0       # Count
+543 0       # State 
+544 4000    # Program Counter
+545 4100    # Stack Pointer
+546 0       # Reserved
+547 0       # Reserved
+548 0       # Reserved
+549 0       # Reserved
+
+# Thread 5
+550 5       # ID
+551 0       # Start Time
+552 0       # Count
+553 0       # State 
+554 5000    # Program Counter
+555 5100    # Stack Pointer
+556 0       # Reserved
+557 0       # Reserved
+558 0       # Reserved
+559 0       # Reserved
+
+# Thread 6
+560 6       # ID
+561 0       # Start Time
+562 0       # Count
+563 0       # State 
+564 6000    # Program Counter
+565 6100    # Stack Pointer
+566 0       # Reserved
+567 0       # Reserved
+568 0       # Reserved
+569 0       # Reserved
+
+# Thread 7
+570 7       # ID
+571 0       # Start Time
+572 0       # Count
+573 0       # State 
+574 7000    # Program Counter
+575 7100    # Stack Pointer
+576 0       # Reserved
+577 0       # Reserved
+578 0       # Reserved
+579 0       # Reserved
+
+# Thread 8
+580 8       # ID
+581 0       # Start Time
+582 0       # Count
+583 0       # State 
+584 8000    # Program Counter
+585 8100    # Stack Pointer
+586 0       # Reserved
+587 0       # Reserved
+588 0       # Reserved
+589 0       # Reserved
+
+# Thread 9
+590 9       # ID
+591 0       # Start Time
+592 0       # Count
+593 0       # State 
+594 9000    # Program Counter
+595 9100    # Stack Pointer
+596 0       # Reserved
+597 0       # Reserved
+598 0       # Reserved
+599 0       # Reserved
+
+# Thread 10
+600 10      # ID
+601 0       # Start Time
+602 0       # Count
+603 0       # State 
+604 10000   # Program Counter
+605 10100   # Stack Pointer
+606 0       # Reserved
+607 0       # Reserved
+608 0       # Reserved
+609 0       # Reserved
+
+# Additional variables
+200 0       # Contex switch number
+201 0       # Terminated thread number
+
+#THREAD VARIABLES
+#Thread 1 - Factorial Calculation
+1050 6      # Number to calculate factorial
+1051 1      # Result
+1099 0      # Jump flag 
+
+#Thread 2 - Sum Calculator
+2050 1      # Loop counter
+2051 0      # Sum
+2052 15     # Loop end value
+2099 0      # Jump flag
+
+#Thread 3 - Simple Counter
+3050 1      # Counter
+3051 5      # End value
+3099 0      # Jump flag
+
+#Thread 4 - Search Algorithm
+4050 87     # array[0]
+4051 35     # array[1]  
+4052 92     # array[2]
+4053 28     # array[3]
+4054 32     # array[4]
+4055 65     # array[5]
+4057 28     # array[6]
+4058 101    # array[7]
+4060 65     # Searched value
+4061 0      # Current position
+4062 8      # Size of the array
+4063 -1     # Not found
+4099 0      # Jump flag
+
+#Thread 5 - Insertion Sort
+5070 26      # array[0]
+5071 4      # array[1]
+5072 89      # array[2]
+5073 1      # array[3]
+5074 9      # array[4]
+5080 5      # Size of the array
+5081 1      # Outer loop index
+5099 0      # Jump flag
+
+End Data Section
+
+#INSTRUCTION SECTION
+Begin Instruction Section
+
+0 SET 700 0             # Initialize by jumping to thread scheduler
+
+# SYSCALL YIELD - Voluntarily yielding the CPU
+400 CPY 22 50           # Load active thread ID
+401 SET 10 51           # Thread table entry size
+402 SET 0 52            # Initialize result
+403 CPY 50 53           # Copy ID for calculation
+
+# Calculate thread table offset
+404 JIF 53 408          # Exit if counter = 0
+405 ADDI 52 51          # Add 10 to result
+406 ADD 53 -1           # Decrement counter
+407 JIF 24 404          # Repeat loop
+408 ADD 52 500          # Add base address
+409 ADD 52 3            # Point to state field
+410 CPYI 52 60          # Load thread state
+
+# Check if thread is blocked
+411 SET 2 61            # Set blocked state constant
+412 SUBI 61 60          # Compare states
+413 JIF 60 420          # Skip if blocked
+414 JIF 24 417          # Change running to ready
+
+# Change state to ready if running
+417 SET 0 54            # Ready state
+418 SET 54 55           # Copy to intermediate register
+419 CPYI2 55 52         # Store ready state to thread table
+
+# Save thread registers
+420 CPY 4 53            # Get saved PC
+421 ADD 52 1            # Point to PC field
+422 SET 53 55           # Copy PC to intermediate register
+423 CPYI2 55 52         # Store PC
+424 CPY 1 53            # Get SP
+425 ADD 52 1            # Point to SP field
+426 SET 53 55           # Copy SP to intermediate register
+427 CPYI2 55 52         # Store SP
+428 JIF 24 700          # Return to thread scheduler
+
+# SYSCALL HLT - Thread termination handler
+430 CPY 22 50           # Load active thread ID
+431 SET 10 51           # Thread table entry size
+432 SET 0 52            # Initialize result
+433 CPY 50 53           # Copy ID for calculation
+
+# Calculate thread table offset
+434 JIF 53 438          # Exit if counter = 0
+435 ADDI 52 51          # Add 10 to result
+436 ADD 53 -1           # Decrement counter
+437 JIF 24 434          # Repeat loop
+
+# Mark thread as terminated
+438 ADD 52 500          # Add base address
+439 ADD 52 3            # Point to state field
+440 SET 3 54            # Prepare terminated state value
+441 SET 54 55           # Copy to intermediate register
+442 CPYI2 55 52         # Store terminated state
+443 ADD 201 1           # Increment terminated thread counter
+
+# Check if all threads have terminated
+444 CPY 201 50          # Get terminated thread count
+445 CPY 21 51           # Get total number of user threads
+446 SUBI 51 50          # Calculate remaining threads
+447 JIF 50 449          # If none remaining
+448 JIF 24 700          # Otherwise, return to thread scheduler
+449 HLT                 # All threads complete
+
+# SCHEDULER - Round-robin thread selection
+700 ADD 23 1            # Increment thread counter
+701 CPY 23 50           # Get thread counter
+702 CPY 21 51           # Get thread count
+703 SUBI 50 51          # Check if exceeded
+704 JIF 51 715          # If not exceeded, continue
+705 SET 1 23            # Reset to first user thread
+706 JIF 24 715          # Jump to thread search
+
+# Thread selection initialization
+715 SET 0 26            # Reset found flag
+716 SET 0 25            # Reset safety counter
+717 JIF 24 720          # Start checking threads
+
+# Safety counter loop
+720 ADD 25 1            # Increment safety counter
+721 CPY 25 50           # Get safety counter
+722 CPY 21 51           # Get thread count
+723 SUBI 51 50          # Check if we've tried all threads 
+724 JIF 50 902          # If all checked with no success, halt
+725 JIF 24 730          # Continue to thread check
+
+# Thread address calculation
+730 CPY 23 50           # Get current thread ID
+731 SET 10 51           # Thread entry size
+732 SET 0 52            # Clear result register
+733 CPY 50 53           # Copy for multiplication
+734 JIF 53 738          # Exit loop if zero
+735 ADDI 52 51          # Add entry size
+736 ADD 53 -1           # Decrement counter
+737 JIF 24 734          # Continue multiplication
+738 ADD 52 500          # Add table base address
+739 CPY 52 53           # Save address
+
+# Thread State Checking
+740 ADD 53 3            # Point to state field
+741 CPYI 53 54          # Get thread state
+742 SET 0 55            # Ready state
+743 SUBI 54 55          # Check if ready
+744 JIF 55 768          # If ready, select it
+
+# Handle terminated thread
+745 SET 3 55            # Terminated state
+746 CPYI 53 56          # Get thread state 
+747 SUBI 55 56          # Check if terminated
+748 JIF 56 700          # Skip terminated thread
+
+# Check for blocked thread
+749 SET 2 55            # Blocked state
+750 CPYI 53 56          # Get thread state
+751 SUBI 55 56          # Check if blocked
+752 JIF 56 754          # Process blocked thread
+753 JIF 24 700          # Skip other states
+
+# Handle blocked thread timeout
+754 ADD 53 -2           # Point to block time
+755 CPYI 53 54          # Get block time
+756 CPY 3 55            # Get current time
+757 SUBI 55 54          # Calculate elapsed time
+758 SET 100 56          # Timeout threshold
+759 SUBI 56 54          # Check against threshold
+760 JIF 54 762          # Unblock if timeout
+761 JIF 24 700          # Keep blocked
+
+# Unblock timed-out thread
+762 SET 0 54            # Ready state
+763 ADD 53 2            # Return to state field
+764 CPYI 53 54          # Set to ready
+765 JIF 24 768          # Select this thread
+
+# Thread selection success
+768 SET 1 26            # Set found flag
+769 CPY 52 53           # Restore base address
+770 JIF 24 780          # Prepare context switch
+
+# Context switch - thread activation
+780 CPY 23 22           # Set current thread ID
+781 ADD 53 3            # Point to state field
+782 SET 1 54            # Running state
+783 SET 54 55           # Prepare for store
+784 CPYI2 55 53         # Set thread to running
+785 ADD 53 2            # Point to SP field
+786 CPY 53 50           # Get SP address
+787 CPYI 50 1           # Load SP register
+788 ADD 53 -4           # Point to start time
+789 CPY 3 54            # Get current time
+790 CPY 53 50           # Get start time address
+791 SET 50 55           # Prepare for store
+792 CPYI2 55 50         # Update start time
+793 ADD 53 3            # Point to PC field
+794 CPYI 53 19          # Get thread PC
+795 ADD 200 1           # Count context switch
+796 USER 19             # Jump to thread code         
+
+# System halt condition
+902 HLT                 # No ready threads
+
+# THREAD 1 - FACTORIAL CALCULATOR
+# Main loop
+1000 JIF 1050 1020      # If n <= 0, exit to end
+
+# Initialize multiplication
+1001 SET 0 1053         # Reset temp result 
+1002 CPY 1050 1052      # Set loop counter to n
+
+# Multiplication by repeated addition
+1003 JIF 1052 1007      # Exit if counter reaches zero
+1004 ADDI 1053 1051     # Add current result to temp
+1005 ADD 1052 -1        # Decrement counter
+1006 JIF 1099 1003      # Repeat addition loop
+
+# Update and continue factorial
+1007 CPY 1053 1051      # Save new factorial value
+1008 SYSCALL PRN 1051   # Output current result
+1009 SYSCALL YIELD      # Let other threads run
+1010 ADD 1050 -1        # Decrement n for next factorial
+1011 JIF 1099 1000      # Continue with next number
+
+# Finalize and terminate
+1020 SYSCALL PRN 1051   # Output final result
+1021 SYSCALL HLT        # End thread execution
+
+# THREAD 2 - SUM CALCULATOR
+# Initialization jump
+2000 JIF 2099 2004      # Skip initialization
+
+# Loop condition check
+2004 CPY 2050 2053      # Load counter value
+2005 CPY 2052 2054      # Load limit value
+2006 SUBI 2054 2053     # Compare limit - counter
+2007 ADD 2053 1         # Adjust comparison result
+2008 JIF 2053 2020      # Exit if counter > limit
+
+# Process current iteration
+2009 ADDI 2051 2050     # Add counter to sum
+2010 SYSCALL PRN 2051   # Display current sum
+2011 SYSCALL YIELD      # Let other threads run
+2012 ADD 2050 1         # Increment counter
+2013 JIF 2099 2004      # Continue loop
+
+# Finalize and terminate
+2020 SYSCALL PRN 2051   # Display final sum
+2021 SYSCALL HLT        # End thread execution
+
+# THREAD 3 - SIMPLE COUNTER
+# Initialization jump
+3000 JIF 3099 3003      # Skip to main loop
+
+# Loop condition check
+3003 CPY 3050 3052      # Load current counter
+3004 CPY 3051 3053      # Load max limit
+3005 SUBI 3053 3052     # Calculate limit - counter
+3006 ADD 3053 1         # Adjust comparison value
+3007 JIF 3052 3020      # Exit if counter > limit
+
+# Process and display
+3008 SYSCALL PRN 3050   # Output current count
+3009 SYSCALL YIELD      # Let other threads run
+3010 ADD 3050 1         # Increment counter
+3011 JIF 3099 3003      # Repeat loop
+
+# Finalize and terminate
+3020 SYSCALL HLT        # End thread execution
+
+# THREAD 4 - SEARCH ALGORITHM
+# Initialization jump
+4000 JIF 4099 4015      # Skip to main search loop
+
+# Loop boundary check
+4015 CPY 4061 4070      # Load current index
+4016 CPY 4062 4071      # Load array size
+4017 SUBI 4071 4070     # Calculate size - index
+4018 JIF 4070 4080      # Exit if index >= array size
+
+# Access array element
+4019 CPY 4061 4072      # Load index
+4020 ADD 4072 4050      # Calculate element address
+4021 CPYI 4072 4073     # Load array[index] value
+
+# Compare with search key (first direction)
+4022 CPY 4073 4074      # Load array element
+4023 CPY 4060 4075      # Load search key
+4024 SUBI 4074 4075     # Calculate element - key
+4025 JIF 4075 4027      # If element <= key, check other way
+4026 JIF 4099 4035      # If element > key, check next element
+
+# Compare with search key (reverse direction)
+4027 CPY 4060 4076      # Load search key
+4028 CPY 4073 4077      # Load array element
+4029 SUBI 4076 4077     # Calculate key - element
+4030 JIF 4077 4040      # If key <= element, found match
+4031 JIF 4099 4035      # Otherwise, check next element
+
+# Move to next element
+4035 ADD 4061 1         # Increment index
+4036 SYSCALL YIELD      # Let other threads run
+4037 JIF 4099 4015      # Continue search loop
+
+# Element found - store result
+4040 CPY 4061 4063      # Save found index
+4041 JIF 4099 4080      # Jump to completion
+
+# Finalize and terminate
+4080 SYSCALL PRN 4063   # Output search result
+4081 SYSCALL HLT        # End thread execution
+
+# THREAD 5 - INSERTION SORT
+# Initialization jump
+5000 JIF 5099 5008      # Skip to main sort loop
+
+# Outer loop check
+5008 CPY 5081 5082      # Load current index i
+5009 CPY 5080 5083      # Load array size n
+5010 SUBI 5083 5082     # Calculate n-i
+5011 JIF 5082 5065      # Exit if i >= n
+
+# Get current element as key
+5012 CPY 5081 5084      # Load index i
+5013 ADD 5084 5070      # Calculate array[i] address
+5014 CPYI 5084 5085     # Load key = array[i]
+
+# Setup inner loop with j = i-1
+5015 CPY 5081 5086      # Set j = i
+5016 ADD 5086 -1        # Decrement to j = i-1
+
+# Inner loop boundary check
+5017 CPY 5086 5087      # Load index j
+5018 ADD 5087 1         # Add 1 to check j >= 0
+5019 JIF 5087 5045      # Exit if j < 0
+
+# Load comparison element
+5020 CPY 5086 5088      # Load index j
+5021 ADD 5088 5070      # Calculate array[j] address
+5022 CPYI 5088 5089     # Load array[j]
+
+# Compare elements
+5023 CPY 5089 5090      # Load array[j]
+5024 CPY 5085 5091      # Load key
+5025 SUBI 5090 5091     # Calculate array[j]-key
+5026 JIF 5091 5045      # Skip shift if array[j] <= key
+
+# Shift element right
+5027 CPY 5086 5092      # Load index j
+5028 ADD 5092 1         # Calculate j+1
+5029 ADD 5092 5070      # Calculate array[j+1] address
+5030 CPY 5089 5093      # Load array[j] value
+5031 SET 5093 5094      # Prepare for storage
+5032 CPYI2 5094 5092    # Store array[j+1] = array[j]
+
+# Continue inner loop
+5033 ADD 5086 -1        # Decrement j
+5034 SYSCALL YIELD      # Let other threads run
+5035 JIF 5099 5017      # Repeat inner loop
+
+# Insert key at final position
+5045 CPY 5086 5095      # Load final j value
+5046 ADD 5095 1         # Calculate j+1
+5047 ADD 5095 5070      # Calculate array[j+1] address
+5048 SET 5085 5096      # Prepare key for storage
+5049 CPYI2 5096 5095    # Store array[j+1] = key
+
+# Continue with next element
+5050 ADD 5081 1         # Increment i
+5051 SYSCALL YIELD      # Let other threads run
+5052 JIF 5099 5008      # Repeat outer loop
+
+# Output results
+5065 SYSCALL PRN 5070   # Print array[0]
+5066 SYSCALL PRN 5071   # Print array[1]
+5067 SYSCALL PRN 5072   # Print array[2]
+5068 SYSCALL PRN 5073   # Print array[3]
+5069 SYSCALL PRN 5074   # Print array[4]
+5070 SYSCALL HLT        # End thread execution
+
+# THREAD 6 - EMPTY THREAD
+6000 SYSCALL HLT        # Immediately terminate thread
+
+# THREAD 7 - EMPTY THREAD
+7000 SYSCALL HLT        # Immediately terminate thread
+
+# THREAD 8 - EMPTY THREAD
+8000 SYSCALL HLT        # Immediately terminate thread
+
+# THREAD 9 - EMPTY THREAD
+9000 SYSCALL HLT        # Immediately terminate thread
+
+# THREAD 10 - EMPTY THREAD
+10000 SYSCALL HLT       # Immediately terminate thread
+
+End Instruction Section

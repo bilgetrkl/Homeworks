@@ -1,0 +1,955 @@
+CPU STATE
+PC: 10
+Instruction at: CPY 4 6
+
+MEMORY DUMP:
+Memory[0]: 10
+Memory[1]: 1499
+Memory[3]: 1
+Memory[4]: 5
+Memory[5]: 10
+Memory[502]: 1
+Memory[1499]: 1
+CPU STATE
+PC: 11
+Instruction at: ADDI 5 6
+
+MEMORY DUMP:
+Memory[0]: 11
+Memory[1]: 1499
+Memory[3]: 2
+Memory[4]: 5
+Memory[5]: 10
+Memory[6]: 5
+Memory[502]: 2
+Memory[1499]: 1
+CPU STATE
+PC: 12
+Instruction at: RET
+
+MEMORY DUMP:
+Memory[0]: 12
+Memory[1]: 1499
+Memory[3]: 3
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[502]: 3
+Memory[1499]: 1
+CPU STATE
+PC: 1
+Instruction at: CALL 20
+
+MEMORY DUMP:
+Memory[0]: 1
+Memory[1]: 1500
+Memory[3]: 4
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[502]: 4
+Memory[1499]: 1
+CPU STATE
+PC: 20
+Instruction at: SET 0 7
+
+MEMORY DUMP:
+Memory[0]: 20
+Memory[1]: 1499
+Memory[3]: 5
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[502]: 5
+Memory[1499]: 2
+CPU STATE
+PC: 21
+Instruction at: CPY 5 8
+
+MEMORY DUMP:
+Memory[0]: 21
+Memory[1]: 1499
+Memory[3]: 6
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[502]: 6
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 7
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 15
+Memory[502]: 7
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 8
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 15
+Memory[502]: 8
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 9
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 15
+Memory[502]: 9
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 10
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 14
+Memory[502]: 10
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 11
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 14
+Memory[502]: 11
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 12
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 14
+Memory[502]: 12
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 13
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 14
+Memory[502]: 13
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 14
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 13
+Memory[502]: 14
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 15
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 13
+Memory[502]: 15
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 16
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 13
+Memory[502]: 16
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 17
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 13
+Memory[502]: 17
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 18
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 12
+Memory[502]: 18
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 19
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 12
+Memory[502]: 19
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 20
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 12
+Memory[502]: 20
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 21
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 12
+Memory[502]: 21
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 22
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 11
+Memory[502]: 22
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 23
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 11
+Memory[502]: 23
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 24
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 11
+Memory[502]: 24
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 25
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 11
+Memory[502]: 25
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 26
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 10
+Memory[502]: 26
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 27
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 10
+Memory[502]: 27
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 28
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 10
+Memory[502]: 28
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 29
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 10
+Memory[502]: 29
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 30
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 9
+Memory[502]: 30
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 31
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 9
+Memory[502]: 31
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 32
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 9
+Memory[502]: 32
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 33
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 9
+Memory[502]: 33
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 34
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 8
+Memory[502]: 34
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 35
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 8
+Memory[502]: 35
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 36
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 8
+Memory[502]: 36
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 37
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 8
+Memory[502]: 37
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 38
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 7
+Memory[502]: 38
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 39
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 7
+Memory[502]: 39
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 40
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 7
+Memory[502]: 40
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 41
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 7
+Memory[502]: 41
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 42
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 6
+Memory[502]: 42
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 43
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 6
+Memory[502]: 43
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 44
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 6
+Memory[502]: 44
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 45
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 6
+Memory[502]: 45
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 46
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 5
+Memory[502]: 46
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 47
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 5
+Memory[502]: 47
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 48
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 5
+Memory[502]: 48
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 49
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 5
+Memory[502]: 49
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 50
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 4
+Memory[502]: 50
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 51
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 4
+Memory[502]: 51
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 52
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 4
+Memory[502]: 52
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 53
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 4
+Memory[502]: 53
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 54
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 3
+Memory[502]: 54
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 55
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 3
+Memory[502]: 55
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 56
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 3
+Memory[502]: 56
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 57
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 3
+Memory[502]: 57
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 58
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 2
+Memory[502]: 58
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 59
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 2
+Memory[502]: 59
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 60
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 2
+Memory[502]: 60
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 61
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 2
+Memory[502]: 61
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 62
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 1
+Memory[502]: 62
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 63
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 1
+Memory[502]: 63
+Memory[1499]: 2
+CPU STATE
+PC: 23
+Instruction at: ADDI 4 7
+
+MEMORY DUMP:
+Memory[0]: 23
+Memory[1]: 1499
+Memory[3]: 64
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 1
+Memory[502]: 64
+Memory[1499]: 2
+CPU STATE
+PC: 24
+Instruction at: ADD 8 -1
+
+MEMORY DUMP:
+Memory[0]: 24
+Memory[1]: 1499
+Memory[3]: 65
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[8]: 1
+Memory[502]: 65
+Memory[1499]: 2
+CPU STATE
+PC: 25
+Instruction at: SET 22 0
+
+MEMORY DUMP:
+Memory[0]: 25
+Memory[1]: 1499
+Memory[3]: 66
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[502]: 66
+Memory[1499]: 2
+CPU STATE
+PC: 22
+Instruction at: JIF 8 26
+
+MEMORY DUMP:
+Memory[0]: 22
+Memory[1]: 1499
+Memory[3]: 67
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[502]: 67
+Memory[1499]: 2
+CPU STATE
+PC: 26
+Instruction at: RET
+
+MEMORY DUMP:
+Memory[0]: 26
+Memory[1]: 1499
+Memory[3]: 68
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[502]: 68
+Memory[1499]: 2
+CPU STATE
+PC: 2
+Instruction at: HLT
+
+MEMORY DUMP:
+Memory[0]: 2
+Memory[1]: 1500
+Memory[3]: 69
+Memory[4]: 5
+Memory[5]: 15
+Memory[6]: 5
+Memory[502]: 69
+Memory[1499]: 2

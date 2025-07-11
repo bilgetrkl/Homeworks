@@ -1,0 +1,33 @@
+# Stack Operations Test
+
+Begin Data Section
+# System registers
+0 0   # PC
+1 100 # SP - Stack starts at address 100
+2 0   # Syscall result
+3 0   # Instruction count
+
+# Values to push onto stack
+4 42  # First value
+5 17  # Second value
+6 99  # Third value
+
+# Variables for popped values
+7 0   # Will hold first popped value
+8 0   # Will hold second popped value
+9 0   # Will hold third popped value
+End Data Section
+
+Begin Instruction Section
+# Push values onto stack
+0 PUSH 4    # Push 42
+1 PUSH 5    # Push 17
+2 PUSH 6    # Push 99
+
+# Pop values from stack (in reverse order)
+3 POP 9     # Pop 99 -> memory[9]
+4 POP 8     # Pop 17 -> memory[8]
+5 POP 7     # Pop 42 -> memory[7]
+
+6 HLT             # Halt program
+End Instruction Section
